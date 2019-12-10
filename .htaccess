@@ -1,0 +1,23 @@
+#Header set Access-Control-Allow-Origin "*"
+RewriteEngine On
+
+ErrorDocument 404 index.php?error=404
+ErrorDocument 500 index.php.php?error=500
+
+#cronJOb
+RewriteRule   ^api/v1/cron/paytm/payment/status$             index.php?route=payTmCronJob  [NC]
+
+RewriteRule   ^api/v1/excel$              index.php?route=excel  [NC]
+RewriteRule   ^api/v1/formid$             index.php?route=formId  [NC]
+RewriteRule   ^api/v1/industries$         index.php?route=industries  [NC]
+RewriteRule   ^api/v1/registeration$      index.php?route=registeration  [NC]
+RewriteRule   ^api/v1/payment/process$    index.php?route=paymentProcess  [NC]
+RewriteRule   ^api/v1/payment/success$    index.php?route=paymentSuccess  [NC]
+RewriteRule   ^api/v1/login$              index.php?route=Login  [NC]
+RewriteRule   ^api/v1/profile/me$         index.php?route=getUserProfile [NC]
+RewriteRule   ^api/v1/profile/update$     index.php?route=profileUpdate  [NC]
+RewriteRule   ^api/v1/video/save          index.php?route=SaveVideoIntroduction  [NC]
+RewriteRule   ^api/v1/video/intro/list$   index.php?route=VideoIntroductionList  [NC]
+RewriteRule   ^api/v1/logout$             index.php?route=Logout  [NC]
+RewriteRule   ^api/v1/job/opening/list?(.*)$   index.php?route=jobOpeningList&$1 [L,QSA]
+RewriteRule   ^api/v1/rpack/(.*)?(.*)$   index.php?route=rPack&endpoint=$1 [L,QSA]
